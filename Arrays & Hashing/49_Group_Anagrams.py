@@ -17,20 +17,16 @@ Output: [["a"]]
 """
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        # using a dict to record the str as key and its anagram as value
-        anagram_dict = {}
-
-        # iterate through the strs list
+        str_map = {}
+        res = []
         for str in strs:
             sorted_str = ''.join(sorted(str))
-
-            # if the sorted_str exists in the anagram_dict, append its original str to the value
-            if sorted_str in anagram_dict:
-                anagram_dict[sorted_str].append(str)
+            if sorted_str in str_map:
+                str_map[sorted_str].append(str)
             else:
-                anagram_dict[sorted_str] = [str]
-
-        res = list(anagram_dict.values())
+                str_map[sorted_str] = [str]
+        
+        res = list(str_map.values())
 
         return res
     
