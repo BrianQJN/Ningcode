@@ -20,14 +20,14 @@ Output: [0,1]
 """
 class Solution():
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        # using a dict to record the num and its index
-        num_dict = {}
-        for i, num in enumerate(nums):
+        # using a dict to record num and index
+        num_index = {}
+        # iterate through the nums list
+        for index, num in enumerate(nums):
             differential = target - num
-            # if the diffrential in dict, means we can sum up to target
-            if differential in num_dict:
-                return [i, num_dict[differential]]
-            num_dict[num] = i
+            if differential in num_index:
+                return [index, num_index[differential]]
+            num_index[num] = index
 
 
 if __name__ == "__main__":
