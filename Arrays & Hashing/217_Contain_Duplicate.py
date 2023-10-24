@@ -15,14 +15,12 @@ Output: true
 """
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        # using the set to record the appearance of num
-        numset = set()
-        # iterate through the nums array
-        # if it is in the set, means there is a duplicate, return True
+        num_set = set()
         for num in nums:
-            if num in numset:
-                return True
-            numset.add(num)
+            if num in num_set:
+               return True
+            num_set.add(num)
+        return False
             
 
 if __name__ == "__main__":
