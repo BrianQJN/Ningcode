@@ -14,30 +14,26 @@ Output: false
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # if t is an anagram of s, their length must be same
+        # initialize a dict to record the frequency of each letter
+        char_freq = {}
+
+        # if len of s and t is not equal, return False
         if len(s) != len(t):
             return False
-
-        # count the appearance of each letter in s
-        count_s = {}
+        
+        # iterate through s
         for char in s:
-            count_s[char] = count_s.get(char, 0) + 1
+            char_freq[char] = char_freq.get(char, 0) + 1
         
-        # check the letters in t
+        # iterate through t
         for char in t:
-            if char not in count_s:
-                return  False
-            count_s[char] -= 1
-            if count_s[char] < 0:
+            if char not in char_freq:
                 return False
-            if count_s[char] == 0:
-                count_s.pop(char)
-
-        if len(count_s.keys()) == 0:
-            return True
+            char_freq[char] -= 1
+            if char_freq[char] == 0:
+                char_freq.pop(char)
         
-        return False
-    
+        return len(char_freq.keys()) == 0
 
 if __name__ == '__main__':
     s = "anagram"
