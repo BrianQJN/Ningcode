@@ -21,7 +21,17 @@ class Solution:
         :param k: int
         :return: list[int]
 
+        :time complexity: 
+            create frequency map use O(n)
+            create heapq use O(n * log(k))
+            create result list use O(k)
+            total: O(n + k)
         
+        :space complexity:
+            frequency map use O(n)
+            min_heap use O(k)
+            result list use O(k)
+            total: O(n + k)
         """
         # Step 1: Create a frequency map using Counter
         num_freqs = Counter(nums)
