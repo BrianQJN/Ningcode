@@ -15,6 +15,17 @@ Output: [0,0,9,0,0]
 """
 class Solution:
     def productExceptSelf(self, nums: list[int]) -> list[int]:
+        """
+        :time complexity:
+            update left products use O(n)
+            update right products use O(n)
+            form result use O(n)
+            total: O(n)
+        :space complextiy:
+            two product lists use O(n)
+            res use O(n)
+            total: O(n)
+        """
         # Step 1: Initialize two arrays to record the left and right side product in each position
         n = len(nums)
         left_product = [1] * n
