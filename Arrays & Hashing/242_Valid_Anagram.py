@@ -14,6 +14,15 @@ Output: false
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        """
+        :time complexity:
+            iterate through s: O(n)
+            iterate through t: O(n)
+            total: O(n)
+        :space complexity:
+            dict: O(n)
+            total: O(n)
+        """
         # initialize a dict to record the frequency of each letter
         char_freq = {}
 
