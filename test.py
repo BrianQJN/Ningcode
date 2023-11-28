@@ -1,2 +1,1 @@
-a = {}
-print((a.keys()))
+print(8//3)
